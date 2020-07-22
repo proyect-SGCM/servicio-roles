@@ -14,22 +14,22 @@ public class RolServiceImp implements IRolService {
     private IRol irol;
 
     @Override
-    public List<Rol> listar() {
+    public List<Rol> getRoles() {
         return (List<Rol>)irol.findAll();
     }
 
     @Override
-    public int addRol(Rol r) {
-        return 0;
+    public Rol addRol(Rol rol) {
+        return irol.save(rol);
     }
-
-    // @Override
-    // public Optional<Rol> listarId(int id) {
-    //     return null;
-    // }
 
     @Override
-    public void delete(int id) {
+	public Rol findById(int id) {
+		return irol.findById(id).orElse(null);
     }
-
+    
+    @Override
+    public void delete(int id) {
+        irol.deleteById(id);
+    }
 }
