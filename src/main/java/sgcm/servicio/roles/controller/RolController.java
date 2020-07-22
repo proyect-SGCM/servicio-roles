@@ -17,10 +17,10 @@ import sgcm.servicio.roles.service.IRolService;
 public class RolController {
 
     @Autowired
-    IRolService serviceRol;
+    private IRolService rolservice;
 
     @GetMapping("/get_roles")
     public List<Rol> listarRoles(){
-        return serviceRol.listar();
+        return rolservice.listar();
     }
 }

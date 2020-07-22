@@ -1,52 +1,53 @@
 package sgcm.servicio.roles.model.entity;
 
+import java.io.Serializable;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
-
 @Entity 
 @Table(name= "roles")
-public class Rol {
+public class Rol implements Serializable {
     
     @Id
     @GeneratedValue( strategy = GenerationType.IDENTITY )
-    private int id;
-    private String name;
-    private String telefono;
-
+    private int id_rol;
+    private String nombre;
+    private String descripcion;
 
     public Rol() {
     }
 
-    public Rol(int id, String name, String telefono) {
-        this.id = id;
-        this.name = name;
-        this.telefono = telefono;
+    public Rol(int id_rol, String nombre, String descripcion) {
+        this.id_rol = id_rol;
+        this.nombre = nombre;
+        this.descripcion = descripcion;
     }
 
-    public int getId() {
-        return this.id;
+    public int getId_rol() {
+        return this.id_rol;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setId_rol(int id_rol) {
+        this.id_rol = id_rol;
     }
 
-    public String getName() {
-        return this.name;
+    public String getNombre() {
+        return this.nombre;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
     }
 
-    public String getTelefono() {
-        return this.telefono;
+    public String getDescripcion() {
+        return this.descripcion;
     }
 
-    public void setTelefono(String telefono) {
-        this.telefono = telefono;
+    public void setDescripcion(String descripcion) {
+        this.descripcion = descripcion;
     }
+    private static final long serialVersionUID = 1L;
 }

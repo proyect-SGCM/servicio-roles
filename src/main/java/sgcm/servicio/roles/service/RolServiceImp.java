@@ -3,10 +3,11 @@ package sgcm.servicio.roles.service;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import sgcm.servicio.roles.model.dao.IRol;
 import sgcm.servicio.roles.model.entity.Rol;
-
+@Service
 public class RolServiceImp implements IRolService {
     
     @Autowired
